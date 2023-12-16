@@ -1,65 +1,30 @@
-## Example Summary
+# Module 7 Project: TI SimpleLink CC3220S Thermostat System
 
-Application that toggles an LED(s) using a GPIO pin interrupt.
+## Project Overview
+The Module 7 Project is a sophisticated thermostat system developed using the Texas Instruments SimpleLink CC3220S platform. This project demonstrates the integration of multiple peripherals, including GPIO, Timer, I2C, and UART, to create a functional and interactive thermostat system. The primary functionalities include reading room temperature via an I2C-based sensor, controlling an LED to simulate a heating system, and communicating system status over UART. The project employs a state machine approach for efficient task scheduling and management.
 
-## Peripherals & Pin Assignments
+### Key Achievements
+- **Advanced Peripheral Integration**: Seamlessly integrated various peripherals (GPIO, Timer, I2C, UART) to create a cohesive and functional thermostat system.
+- **Interactive User Interface**: Implemented user inputs through buttons, enabling real-time adjustments to the temperature setpoint.
+- **Effective Data Communication**: Utilized UART to simulate data transmission, providing real-time updates on temperature, setpoint, and system status.
 
-When this project is built, the SysConfig tool will generate the TI-Driver
-configurations into the __ti_drivers_config.c__ and __ti_drivers_config.h__
-files. Information on pins and resources used is present in both generated
-files. Additionally, the System Configuration file (\*.syscfg) present in the
-project may be opened with SysConfig's graphical user interface to determine
-pins and resources used.
+### Areas for Improvement
+- **User Interface Enhancement**: Future iterations could include an LCD display for a more informative and user-friendly interface.
+- **Connectivity Features**: Integrating Wi-Fi or Bluetooth for remote monitoring and control would significantly enhance the system's capabilities.
+- **Energy Efficiency**: Implementing energy-saving algorithms could optimize the system for real-world applications, especially in power-critical scenarios.
 
-* `CONFIG_GPIO_LED_0` - Indicates that the board was initialized within
-`mainThread()` also toggled by `CONFIG_GPIO_BUTTON_0`
-* `CONFIG_GPIO_LED_1` - Toggled by `CONFIG_GPIO_BUTTON_1`
-* `CONFIG_GPIO_BUTTON_0` - Toggles `CONFIG_GPIO_LED_0`
-* `CONFIG_GPIO_BUTTON_1` - Toggles `CONFIG_GPIO_LED_1`
+### Tools and Resources Added
+- **TI SimpleLink CC3220S SDK**: Leveraged Texas Instruments' software development kit for robust development and integration of peripherals.
+- **I2C-based Temperature Sensor**: Utilized for accurate temperature readings, essential for the thermostat's functionality.
+- **UART Communication**: Employed for debugging and simulating data transmission to a server or other systems.
 
-## BoosterPacks, Board Resources & Jumper Settings
+### Transferable Skills
+- **Peripheral Integration**: Skills in integrating and managing multiple hardware components are crucial in embedded systems development.
+- **Software Architecture**: Developing a state machine for task management is a versatile skill, applicable in various software engineering fields.
+- **Real-time Data Processing**: Experience in handling real-time data and implementing control systems is widely applicable in IoT and automation.
 
-For board specific jumper settings, resources and BoosterPack modifications,
-refer to the __Board.html__ file.
+### Maintainability, Readability, and Adaptability
+- **Modular Code Design**: The project's code is organized into modular functions for each peripheral and task, enhancing readability and maintainability.
+- **Comprehensive Documentation**: Extensive comments and structured documentation make the system understandable and easier to modify or extend.
+- **Adaptive System Architecture**: The design allows for easy integration of additional features, sensors, or communication protocols, ensuring long-term adaptability.
 
-> If you're using an IDE such as Code Composer Studio (CCS) or IAR, please
-refer to Board.html in your project directory for resources used and
-board-specific jumper settings.
-
-The Board.html can also be found in your SDK installation:
-
-        <SDK_INSTALL_DIR>/source/ti/boards/<BOARD>
-
-## Example Usage
-
-* Run the example. `CONFIG_GPIO_LED_0` turns ON to indicate driver
-initialization is complete.
-
-* `CONFIG_GPIO_LED_0` is toggled by pushing `CONFIG_GPIO_BUTTON_0`.
-* `CONFIG_GPIO_LED_1` is toggled by pushing `CONFIG_GPIO_BUTTON_1`.
-
-## Application Design Details
-
-* The `gpioButtonFxn0/1` functions are configured in the driver configuration
-file. These functions are called in the context of the GPIO interrupt.
-
-* Not all boards have more than one button, so `CONFIG_GPIO_LED_1` may not be
-toggled.
-
-* There is no button de-bounce logic in the example.
-
-TI-RTOS:
-
-* When building in Code Composer Studio, the configuration project will be
-imported along with the example. These projects can be found under
-\<SDK_INSTALL_DIR>\/kernel/tirtos/builds/\<BOARD\>/(release|debug)/(ccs|gcc).
-The configuration project is referenced by the example, so it
-will be built first. The "release" configuration has many debug features
-disabled. These features include assert checking, logging and runtime stack
-checks. For a detailed difference between the "release" and "debug"
-configurations, please refer to the TI-RTOS Kernel User's Guide.
-
-FreeRTOS:
-
-* Please view the `FreeRTOSConfig.h` header file for example configuration
-information.
