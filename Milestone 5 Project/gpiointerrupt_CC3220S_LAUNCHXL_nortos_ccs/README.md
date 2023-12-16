@@ -1,30 +1,25 @@
-# Module 5 Milestone Project: Morse Code Message Display System
+# Module 5: Morse Code Message Display System
 
 ## Project Overview
-The Module 5 Milestone Project is an inventive implementation of a Morse code message display system, primarily for educational and demonstrative purposes. It employs two LEDs (red and green) to represent "SOS" and "OK" messages in Morse code. The system enables users to toggle between these messages using buttons, providing an interactive experience. This project is a prime example of integrating hardware and software to create a functional and educational tool.
+The Module 5 project demonstrates an innovative Morse Code Message Display System using LEDs. This system, designed for educational purposes, effectively communicates "SOS" and "OK" messages in Morse code. It addresses the challenge of teaching Morse code through a hands-on, interactive approach.
 
-### Key Achievements
-- **Effective Morse Code Implementation**: Accomplished by designing a state machine for controlling LED timing and sequences, accurately representing Morse code's dot and dash system.
-- **Intuitive User Interface**: Button-based controls for toggling between messages make the system user-friendly and accessible.
-- **Organized Code Structure**: The code is logically structured, enhancing understanding, troubleshooting, and setting a foundation for future modifications.
+### What Was Done Particularly Well
+- **Accurate Morse Code Representation**: The project excels in translating Morse code messages into LED signals, demonstrating a keen understanding of both Morse code and electronic signaling.
+- **User-Friendly Design**: The use of simple button controls for toggling between messages shows a thoughtful consideration for user experience.
+- **Clear Code Structure**: The code is organized and well-commented, making it easy for others to understand and learn from.
 
 ### Areas for Improvement
-- **Expandability**: Future versions could support a broader range of messages or allow custom message inputs, increasing versatility.
-- **Power Management**: Optimizing power usage, especially for battery operation, could enhance the system's efficiency and longevity.
-- **Robustness and Error Handling**: Improvements like button debouncing could lead to a more stable and reliable system.
+- **Expandable Message Range**: Future enhancements could include a wider variety of Morse code messages or a feature for users to input custom messages.
+- **Power Optimization**: Investigating and implementing power-saving techniques would make the system more eco-friendly and suitable for battery operation.
 
 ### Tools and Resources Added
-- **Timer and GPIO Drivers**: The use of Texas Instruments' drivers has been pivotal for managing timing sequences and input/output controls.
-- **State Machine Design**: The state machine approach ensures a clear, maintainable, and efficient control system.
-- **Documentation Practices**: Emphasis on comprehensive commenting and clear documentation aids current understanding and future scalability.
+- **Embedded System Drivers**: Leveraged Texas Instruments drivers to handle GPIO and timer functionalities, crucial for the project's success.
+- **Practical Implementation of State Machines**: Utilized state machines to manage LED sequences, a technique that is beneficial in various programming scenarios.
 
 ### Transferable Skills
-- **State Machine Design**: This fundamental software engineering concept is applicable in various contexts, from UI development to complex system controls.
-- **GPIO Handling Skills**: Essential for embedded systems and hardware interfacing projects.
-- **Timer and Interrupt Management**: Vital for managing time-sensitive operations in many real-time systems.
+- **Embedded Systems Design**: The skills developed in managing hardware components and implementing state machines are highly transferable to other embedded system projects.
+- **Problem-Solving and Creativity**: Tackling the challenge of converting Morse code into visual signals demonstrates problem-solving abilities and creative thinking.
 
-### Maintainability, Readability, and Adaptability
-- **Modularity and Code Structure**: The modular code structure enhances maintainability, allowing easy modifications and updates.
-- **Clear Documentation and Commenting**: Detailed comments and documentation facilitate easy understanding and future development.
-- **Scalable and Adaptable Framework**: The project's design supports the addition of new features or messages, ideal for more complex Morse code-related projects.
+### Maintaining, Readability, and Adaptability
+- **Modular Design and Documentation**: The project is broken down into distinct, well-documented modules, each handling a specific aspect of the system. This approach not only makes the code more readable but also simplifies future modifications and enhancements.
 
