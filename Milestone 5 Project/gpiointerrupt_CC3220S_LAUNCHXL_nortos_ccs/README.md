@@ -1,65 +1,30 @@
-## Example Summary
+# Module 5 Milestone Project: Morse Code Message Display System
 
-Application that toggles an LED(s) using a GPIO pin interrupt.
+## Project Overview
+The Module 5 Milestone Project is an inventive implementation of a Morse code message display system, primarily for educational and demonstrative purposes. It employs two LEDs (red and green) to represent "SOS" and "OK" messages in Morse code. The system enables users to toggle between these messages using buttons, providing an interactive experience. This project is a prime example of integrating hardware and software to create a functional and educational tool.
 
-## Peripherals & Pin Assignments
+### Key Achievements
+- **Effective Morse Code Implementation**: Accomplished by designing a state machine for controlling LED timing and sequences, accurately representing Morse code's dot and dash system.
+- **Intuitive User Interface**: Button-based controls for toggling between messages make the system user-friendly and accessible.
+- **Organized Code Structure**: The code is logically structured, enhancing understanding, troubleshooting, and setting a foundation for future modifications.
 
-When this project is built, the SysConfig tool will generate the TI-Driver
-configurations into the __ti_drivers_config.c__ and __ti_drivers_config.h__
-files. Information on pins and resources used is present in both generated
-files. Additionally, the System Configuration file (\*.syscfg) present in the
-project may be opened with SysConfig's graphical user interface to determine
-pins and resources used.
+### Areas for Improvement
+- **Expandability**: Future versions could support a broader range of messages or allow custom message inputs, increasing versatility.
+- **Power Management**: Optimizing power usage, especially for battery operation, could enhance the system's efficiency and longevity.
+- **Robustness and Error Handling**: Improvements like button debouncing could lead to a more stable and reliable system.
 
-* `CONFIG_GPIO_LED_0` - Indicates that the board was initialized within
-`mainThread()` also toggled by `CONFIG_GPIO_BUTTON_0`
-* `CONFIG_GPIO_LED_1` - Toggled by `CONFIG_GPIO_BUTTON_1`
-* `CONFIG_GPIO_BUTTON_0` - Toggles `CONFIG_GPIO_LED_0`
-* `CONFIG_GPIO_BUTTON_1` - Toggles `CONFIG_GPIO_LED_1`
+### Tools and Resources Added
+- **Timer and GPIO Drivers**: The use of Texas Instruments' drivers has been pivotal for managing timing sequences and input/output controls.
+- **State Machine Design**: The state machine approach ensures a clear, maintainable, and efficient control system.
+- **Documentation Practices**: Emphasis on comprehensive commenting and clear documentation aids current understanding and future scalability.
 
-## BoosterPacks, Board Resources & Jumper Settings
+### Transferable Skills
+- **State Machine Design**: This fundamental software engineering concept is applicable in various contexts, from UI development to complex system controls.
+- **GPIO Handling Skills**: Essential for embedded systems and hardware interfacing projects.
+- **Timer and Interrupt Management**: Vital for managing time-sensitive operations in many real-time systems.
 
-For board specific jumper settings, resources and BoosterPack modifications,
-refer to the __Board.html__ file.
+### Maintainability, Readability, and Adaptability
+- **Modularity and Code Structure**: The modular code structure enhances maintainability, allowing easy modifications and updates.
+- **Clear Documentation and Commenting**: Detailed comments and documentation facilitate easy understanding and future development.
+- **Scalable and Adaptable Framework**: The project's design supports the addition of new features or messages, ideal for more complex Morse code-related projects.
 
-> If you're using an IDE such as Code Composer Studio (CCS) or IAR, please
-refer to Board.html in your project directory for resources used and
-board-specific jumper settings.
-
-The Board.html can also be found in your SDK installation:
-
-        <SDK_INSTALL_DIR>/source/ti/boards/<BOARD>
-
-## Example Usage
-
-* Run the example. `CONFIG_GPIO_LED_0` turns ON to indicate driver
-initialization is complete.
-
-* `CONFIG_GPIO_LED_0` is toggled by pushing `CONFIG_GPIO_BUTTON_0`.
-* `CONFIG_GPIO_LED_1` is toggled by pushing `CONFIG_GPIO_BUTTON_1`.
-
-## Application Design Details
-
-* The `gpioButtonFxn0/1` functions are configured in the driver configuration
-file. These functions are called in the context of the GPIO interrupt.
-
-* Not all boards have more than one button, so `CONFIG_GPIO_LED_1` may not be
-toggled.
-
-* There is no button de-bounce logic in the example.
-
-TI-RTOS:
-
-* When building in Code Composer Studio, the configuration project will be
-imported along with the example. These projects can be found under
-\<SDK_INSTALL_DIR>\/kernel/tirtos/builds/\<BOARD\>/(release|debug)/(ccs|gcc).
-The configuration project is referenced by the example, so it
-will be built first. The "release" configuration has many debug features
-disabled. These features include assert checking, logging and runtime stack
-checks. For a detailed difference between the "release" and "debug"
-configurations, please refer to the TI-RTOS Kernel User's Guide.
-
-FreeRTOS:
-
-* Please view the `FreeRTOSConfig.h` header file for example configuration
-information.
